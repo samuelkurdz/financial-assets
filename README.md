@@ -53,7 +53,7 @@ However, for more complex styling needs and to ensure consistency across the app
 
 ### Assumptions
 
-- The financial asset data provided by the API endpoint (assets.json) is assumed to be static and does not require real-time updates.
+- The financial asset data provided by the API endpoint (mentioned below) is assumed to be static and does not require real-time updates.
 - The application is developed with a focus on front-end functionality and does not include backend components such as authentication or data persistence.
 
 ### API Endpoint
