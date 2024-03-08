@@ -13,7 +13,8 @@ export default defineConfig({
       manifest: {
         name: 'Endavu App',
         short_name: 'Endavu',
-        description: 'Endavu - Financial peace of mind',
+        description: 'Financial assets viewer',
+        display: 'standalone',
         theme_color: '#ffffff',
         icons: [
           {
