@@ -156,36 +156,36 @@ function AssetDetailsContent({ className, asset }: ProfileDetails) {
         </div>
 
         <div>
-          <h3 className="text-xs font-medium">profitMargin</h3>
+          <h3 className="text-xs font-medium">Profit margin</h3>
           <p className="text-2xl font-bold">{asset.profitMargin ? numberFormatter(asset.profitMargin) : '---'}</p>
         </div>
 
         <div>
-          <h3 className="text-xs font-medium">revenueTTM</h3>
+          <h3 className="text-xs font-medium">Revenue ttm</h3>
           <p className="text-2xl font-bold">{asset.revenueTTM ? numberFormatter(asset.revenueTTM) : '---'}</p>
         </div>
 
         <div>
-          <h3 className="text-xs font-medium">revenuePerShareTTM</h3>
+          <h3 className="text-xs font-medium">Revenue per share TTM</h3>
           <p className="text-2xl font-bold">
             {asset.revenuePerShareTTM ? numberFormatter(asset.revenuePerShareTTM) : '---'}
           </p>
         </div>
 
         <div>
-          <h3 className="text-xs font-medium">ebitda</h3>
+          <h3 className="text-xs font-medium">EBITDA</h3>
           <p className="text-2xl font-bold">{asset.ebitda ? numberFormatter(asset.ebitda) : '---'}</p>
         </div>
 
         <div>
-          <h3 className="text-xs font-medium">priceToSalesRatio</h3>
+          <h3 className="text-xs font-medium">Price/Sales ratio</h3>
           <p className="text-2xl font-bold">
             {asset.priceToSalesRatio ? numberFormatter(asset.priceToSalesRatio) : '---'}
           </p>
         </div>
 
         <div>
-          <h3 className="text-xs font-medium">priceToBookRatio</h3>
+          <h3 className="text-xs font-medium">Price/Book ratio</h3>
           <p className="text-2xl font-bold">
             {asset.priceToBookRatio ? numberFormatter(asset.priceToBookRatio) : '---'}
           </p>
