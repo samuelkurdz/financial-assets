@@ -1,31 +1,31 @@
-import { useMediaQuery } from '@/hooks/use-media-query.ts';
-import { Button } from '@/components/ui/button.tsx';
-import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-} from '@/components/ui/dialog.tsx';
+import { useState } from 'react';
 import {
   Drawer,
   DrawerClose,
-  DrawerContent,
-  DrawerDescription,
+  DrawerTitle,
   DrawerFooter,
   DrawerHeader,
-  DrawerTitle,
   DrawerTrigger,
-} from '@/components/ui/drawer.tsx';
-import { MoreHorizontal } from 'lucide-react';
-import { Asset } from '@/pages/components/data-table/columns.tsx';
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar.tsx';
-import { Badge } from '@/components/ui/badge.tsx';
-import { Separator } from '@/components/ui/separator.tsx';
-import { currencyFormatter, numberFormatter } from '@/lib/currency-formatter.ts';
-import { assetClassMap } from '@/data/assets.ts';
-import { useState } from 'react';
+  DrawerContent,
+  DrawerDescription,
+} from '@/components/ui/drawer';
+import {
+  Dialog,
+  DialogTitle,
+  DialogHeader,
+  DialogContent,
+  DialogTrigger,
+  DialogDescription,
+} from '@/components/ui/dialog';
+import { assetClassMap } from '@/data/assets';
+import { Badge } from '@/components/ui/badge';
+import { Button } from '@/components/ui/button';
+import { Separator } from '@/components/ui/separator';
+import { useMediaQuery } from '@/hooks/use-media-query';
+import { DotsHorizontalIcon } from '@radix-ui/react-icons';
+import { Asset } from '@/pages/components/data-table/columns';
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
+import { currencyFormatter, numberFormatter } from '@/lib/currency-formatter';
 
 interface AssetDetails {
   asset: Asset;
@@ -41,7 +41,7 @@ export function DrawerDialogDemo({ asset }: AssetDetails) {
         <DialogTrigger asChild>
           <Button variant="ghost" size="sm" className="size-6 p-0">
             <span className="sr-only">Open menu</span>
-            <MoreHorizontal className="size-4" />
+            <DotsHorizontalIcon className="size-4" />
           </Button>
         </DialogTrigger>
         <DialogContent className="sm:max-w-2xl">
@@ -75,30 +75,32 @@ export function DrawerDialogDemo({ asset }: AssetDetails) {
       <DrawerTrigger asChild>
         <Button variant="ghost" size="sm" className="size-6 p-0">
           <span className="sr-only">Open menu</span>
-          <MoreHorizontal className="size-4" />
+          <DotsHorizontalIcon className="size-4" />
         </Button>
       </DrawerTrigger>
       <DrawerContent>
-        <DrawerHeader className="text-left">
-          <DrawerTitle>
-            <div className="flex items-center space-x-4 whitespace-nowrap">
-              <Avatar>
-                <AvatarImage src={asset.logoUrl} />
-                <AvatarFallback delayMs={500}>
-                  <span className="text-xs">{asset.ticker}</span>
-                </AvatarFallback>
-              </Avatar>
-              <div>
-                <p className="text-sm font-medium leading-none max-w-32 md:max-w-xs overflow-hidden text-ellipsis">
-                  {asset.name}
-                </p>
-                <p className="text-sm text-muted-foreground">{asset.ticker}</p>
+        <div className="max-h-[calc(100lvh-100px)] overflow-scroll">
+          <DrawerHeader className="text-left">
+            <DrawerTitle>
+              <div className="flex items-center space-x-4 whitespace-nowrap">
+                <Avatar>
+                  <AvatarImage src={asset.logoUrl} />
+                  <AvatarFallback delayMs={500}>
+                    <span className="text-xs">{asset.ticker}</span>
+                  </AvatarFallback>
+                </Avatar>
+                <div>
+                  <p className="text-sm font-medium leading-none max-w-32 md:max-w-xs overflow-hidden text-ellipsis">
+                    {asset.name}
+                  </p>
+                  <p className="text-sm text-muted-foreground">{asset.ticker}</p>
+                </div>
               </div>
-            </div>
-          </DrawerTitle>
-          <DrawerDescription className="line-clamp-3">{asset.shortDescription}</DrawerDescription>
-        </DrawerHeader>
-        <AssetDetailsContent className="px-4" asset={asset} />
+            </DrawerTitle>
+            <DrawerDescription className="line-clamp-3">{asset.shortDescription}</DrawerDescription>
+          </DrawerHeader>
+          <AssetDetailsContent className="px-4" asset={asset} />
+        </div>
         <DrawerFooter className="pt-2">
           <DrawerClose asChild>
             <Button variant="outline">Cancel</Button>

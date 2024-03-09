@@ -1,54 +1,54 @@
 export const currencies = [
   {
     value: 'DKK',
-    label: 'DKK',
+    label: 'Danish Krone',
   },
   {
     value: 'USD',
-    label: 'USD',
+    label: 'US Dollars',
   },
   {
     value: 'EUR',
-    label: 'EUR',
+    label: 'Euros',
   },
   {
     value: 'CAD',
-    label: 'CAD',
+    label: 'Canadian Dollars',
   },
   {
     value: 'SEK',
-    label: 'SEK',
+    label: 'Swedish Krona',
   },
 ];
 
 export const countries = [
   {
     value: 'DK',
-    label: 'DK',
+    label: 'Denmark',
   },
   {
     value: 'US',
-    label: 'US',
+    label: 'United States',
   },
   {
     value: 'DE',
-    label: 'DE',
+    label: 'Germany',
   },
   {
     value: 'GB',
-    label: 'GB',
+    label: 'United Kingdom',
   },
   {
     value: 'CA',
-    label: 'CA',
+    label: 'Canada',
   },
   {
     value: 'SE',
-    label: 'SE',
+    label: 'Sweden',
   },
   {
     value: 'NL',
-    label: 'NL',
+    label: 'Netherlands',
   },
 ];
 export const sectors = [
