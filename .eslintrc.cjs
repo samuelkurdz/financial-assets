@@ -19,7 +19,7 @@ module.exports = {
     // "import/resolver": {
     //   "node": {
     //     "paths": ["src"],
-    //     "extensions": [".js", ".jsx", ".ts", ".tsx"]
+    //     "extensions": [".js", ".jsx", ".ts", ""]
     //   },
     // }
   },
@@ -46,6 +46,7 @@ module.exports = {
       }
     ],
     "react/react-in-jsx-scope": "off",
+    "react/prop-types": "off",
     'prettier/prettier': 'error',
   },
 }

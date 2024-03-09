@@ -1,10 +1,10 @@
 import { Table } from '@tanstack/react-table';
-import { Button } from '@/components/ui/button.tsx';
-import { Input } from '@/components/ui/input.tsx';
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
 import { Cross2Icon } from '@radix-ui/react-icons';
-import { countries, currencies, sectors } from '@/data/filter-data.ts';
-import { DataTableFacetedFilter } from './data-table-faceted-filter.tsx';
-import { DataTableViewOptions } from './data-table-view-options.tsx';
+import { countries, currencies, sectors } from '@/data/filter-data';
+import { DataTableFacetedFilter } from './data-table-faceted-filter';
+import { DataTableViewOptions } from './data-table-view-options';
 
 interface DataTableToolbarProps<TData> {
   table: Table<TData>;

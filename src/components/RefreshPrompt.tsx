@@ -1,5 +1,3 @@
-import { useRegisterSW } from 'virtual:pwa-register/react';
-
 import {
   ToastAction,
   ToastTitle,
@@ -9,6 +7,7 @@ import {
   ToastViewport,
   ToastClose,
 } from '@/components/ui/toast';
+import { useRegisterSW } from 'virtual:pwa-register/react';
 
 export default function ReloadPrompt() {
   const {
@@ -32,12 +31,14 @@ export default function ReloadPrompt() {
           }}
         >
           <div>
-            <ToastTitle>There is a new version of the app</ToastTitle>
-            <ToastDescription>click on button to update.</ToastDescription>
+            <ToastTitle>{offlineReady ? 'App ready to work offline' : 'There is a new version of the app'}</ToastTitle>
+            {needRefresh && <ToastDescription>Click on button to update.</ToastDescription>}
           </div>
-          <ToastAction asChild altText="Goto schedule to undo" onClick={() => updateServiceWorker(true)}>
-            <button>Update app</button>
-          </ToastAction>
+          {needRefresh && (
+            <ToastAction asChild altText="Goto schedule to undo" onClick={() => updateServiceWorker(true)}>
+              <button>Update app</button>
+            </ToastAction>
+          )}
           <ToastClose />
         </Toast>
         <ToastViewport />

@@ -37,10 +37,16 @@ export function ThemeProvider({
     if (theme === 'system') {
       const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
 
+      document
+        .querySelector('meta[name="theme-color"]')
+        ?.setAttribute('content', systemTheme === 'dark' ? '#000000' : '#ffffff');
       root.classList.add(systemTheme);
       return;
     }
 
+    document
+      .querySelector('meta[name="theme-color"]')
+      ?.setAttribute('content', theme === 'dark' ? '#000000' : '#ffffff');
     root.classList.add(theme);
   }, [theme]);
 

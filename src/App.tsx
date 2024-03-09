@@ -1,14 +1,14 @@
 import useSWR from 'swr';
-import { Toaster } from '@/components/ui/toaster';
-import ReloadPrompt from '@/components/RefreshPrompt';
-import { Asset, columns } from '@/pages/components/data-table/columns';
-import { DataTable } from '@/pages/components/data-table/data-table.tsx';
-import { ThemeProvider } from '@/components/theme-provider';
+import { Skeleton } from '@/components/ui/skeleton';
 import { ModeToggle } from '@/components/mode-toggle';
+import { Separator } from '@/components/ui/separator';
+import ReloadPrompt from '@/components/RefreshPrompt';
+import { ThemeProvider } from '@/components/theme-provider';
+import { DataTable } from '@/pages/components/data-table/data-table';
+import { Asset, columns } from '@/pages/components/data-table/columns';
 
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-expect-error
-
 // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
 const fetcher = (...args) => fetch(...args).then((res) => res.json());
 
@@ -25,10 +25,23 @@ function App() {
           <h2 className="text-3xl font-bold tracking-tight">Financial Assets Viewer</h2>
           <ModeToggle />
         </div>
-        {isLoading && 'Assets loading...'}
+        {isLoading && (
+          <div className="flex flex-col">
+            <Skeleton className="h-8 w-full rounded" />
+            <Separator className="my-3" orientation="horizontal" />
+            <div className="space-y-2">
+              <Skeleton className="h-7 w-full" />
+              <Skeleton className="h-7 w-full" />
+              <Skeleton className="h-7 w-full" />
+              <Skeleton className="h-7 w-full" />
+              <Skeleton className="h-7 w-full" />
+              <Skeleton className="h-7 w-full" />
+              <Skeleton className="h-7 w-full" />
+            </div>
+          </div>
+        )}
         {data && <DataTable columns={columns} data={data} />}
         <ReloadPrompt />
-        <Toaster />
       </div>
     </ThemeProvider>
   );

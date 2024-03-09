@@ -8,8 +8,8 @@ import { Row } from '@tanstack/react-table';
 //   DropdownMenuSeparator,
 //   DropdownMenuTrigger,
 // } from '@/components/ui/dropdown-menu';
-import { Asset } from '@/pages/components/data-table/columns.tsx';
-import { DrawerDialogDemo } from '@/pages/components/asset-details.tsx';
+import { Asset } from '@/pages/components/data-table/columns';
+import { DrawerDialogDemo } from '@/pages/components/asset-details';
 
 interface DataTableRowActionsProps<TData> {
   row: Row<TData>;

@@ -1,8 +1,8 @@
 import { ColumnDef } from '@tanstack/react-table';
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar.tsx';
-import { DataTableColumnHeader } from '@/pages/components/data-table/data-table-column-header.tsx';
-import { DataTableRowActions } from '@/pages/components/data-table/data-table-row-actions.tsx';
-import { currencyFormatter } from '@/lib/currency-formatter.ts';
+import { currencyFormatter } from '@/lib/currency-formatter';
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
+import { DataTableRowActions } from '@/pages/components/data-table/data-table-row-actions';
+import { DataTableColumnHeader } from '@/pages/components/data-table/data-table-column-header';
 
 export interface Asset {
   id: string;
