@@ -18,7 +18,7 @@ export function DataTableToolbar<TData>({ table }: DataTableToolbarProps<TData>)
       <div className="flex flex-1 flex-col lg:flex-row lg:items-center gap-2">
         <Input
           placeholder="Search names..."
-          value={(table.getColumn('name')?.getFilterValue() as string) ?? ''}
+          value={(table.getColumn('name')?.getFilterValue() as string | undefined) ?? ''}
           onChange={(event) => table.getColumn('name')?.setFilterValue(event.target.value)}
           className="max-w-md"
         />

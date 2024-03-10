@@ -10,8 +10,7 @@ interface ThemeProviderProps {
 
 interface ThemeProviderState {
   theme: Theme;
-  // eslint-disable-next-line no-unused-vars
-  setTheme: (theme: Theme) => void;
+  setTheme: (_theme: Theme) => void;
 }
 
 const initialState: ThemeProviderState = {
@@ -27,7 +26,9 @@ export function ThemeProvider({
   storageKey = 'vite-ui-theme',
   ...props
 }: ThemeProviderProps) {
-  const [theme, setTheme] = useState<Theme>(() => (localStorage.getItem(storageKey) as Theme) || defaultTheme);
+  const [theme, setTheme] = useState<Theme>(
+    () => (localStorage.getItem(storageKey) as Theme | undefined) ?? defaultTheme,
+  );
 
   useEffect(() => {
     const root = window.document.documentElement;

@@ -6,6 +6,7 @@ import ReloadPrompt from '@/components/RefreshPrompt';
 import { ThemeProvider } from '@/components/theme-provider';
 import { DataTable } from '@/pages/components/data-table/data-table';
 import { Asset, columns } from '@/pages/components/data-table/columns';
+import { usePermission } from '@/hooks/use-notifcation';
 
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-expect-error
@@ -17,6 +18,7 @@ function App() {
     'https://gist.githubusercontent.com/jesperborgstrup/a57aff4d66392b6c89473c57ef3eadf4/raw/a95a48ad51d90dbbc88f74155deda9fcda76f992/assets.json',
     fetcher,
   );
+  usePermission();
 
   return (
     <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">

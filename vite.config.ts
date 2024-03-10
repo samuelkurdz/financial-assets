@@ -7,6 +7,7 @@ import { VitePWA, VitePWAOptions } from 'vite-plugin-pwa';
 
 const pwaOptions: Partial<VitePWAOptions> = {
   registerType: 'prompt',
+  // injectRegister: 'inline',
   includeAssets: ['favicon.ico', 'apple-touch-icon.png'],
   manifest: {
     name: 'Endavu App',
@@ -14,7 +15,7 @@ const pwaOptions: Partial<VitePWAOptions> = {
     short_name: 'Endavu',
     lang: 'en-US',
     description: 'Financial assets viewer',
-    display: 'fullscreen',
+    display: 'standalone',
     display_override: ['window-controls-overlay'],
     edge_side_panel: {
       preferred_width: 496,

@@ -35,6 +35,15 @@ export function DrawerDialogDemo({ asset }: AssetDetails) {
   const [open, setOpen] = useState(false);
   const isDesktop = useMediaQuery('(min-width: 768px)');
 
+  if (open) {
+    new Notification(`Financial Assets - ${asset.name} price targets`, {
+      icon: '/pwa-192x192.png',
+      body: asset.priceTarget
+        ? `Low: ${asset.currency}${asset.priceTarget.low}, High: ${asset.currency}${asset.priceTarget.high},\nAverage: ${asset.currency}${asset.priceTarget.average}, Median: ${asset.currency}${asset.priceTarget.median}`
+        : 'This asset does not have price targets',
+    });
+  }
+
   if (isDesktop) {
     return (
       <Dialog open={open} onOpenChange={setOpen}>
@@ -118,9 +127,9 @@ interface ProfileDetails {
 
 function AssetDetailsContent({ className, asset }: ProfileDetails) {
   const currency = asset.currency;
+
   return (
     <div className={className}>
-      {/*<Separator className="my-5" orientation="horizontal" />*/}
       <h4 className="font-semibold mb-2.5">Company information</h4>
       <div className="flex flex-wrap gap-2.5">
         {asset.country ? <Badge variant="secondary">{asset.country}</Badge> : null}
@@ -133,7 +142,6 @@ function AssetDetailsContent({ className, asset }: ProfileDetails) {
         {assetClassMap[asset.assetClass] ? <Badge variant="secondary">{assetClassMap[asset.assetClass]}</Badge> : null}
       </div>
 
-      {/*asset market information*/}
       <Separator className="my-5" orientation="horizontal" />
       <h4 className="font-semibold mb-2.5">Financials</h4>
       <div className="grid grid-cols-3 gap-4 justify-between">
