@@ -23,6 +23,7 @@ import { Button } from '@/components/ui/button';
 import { Separator } from '@/components/ui/separator';
 import { useMediaQuery } from '@/hooks/use-media-query';
 import { DotsHorizontalIcon } from '@radix-ui/react-icons';
+import { useNotification } from '@/hooks/user-notification';
 import { Asset } from '@/pages/components/data-table/columns';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { currencyFormatter, numberFormatter } from '@/lib/currency-formatter';
@@ -34,9 +35,10 @@ interface AssetDetails {
 export function DrawerDialogDemo({ asset }: AssetDetails) {
   const [open, setOpen] = useState(false);
   const isDesktop = useMediaQuery('(min-width: 768px)');
+  const pushNotification = useNotification();
 
   if (open) {
-    new Notification(`Financial Assets - ${asset.name} price targets`, {
+    pushNotification(`Financial Assets - ${asset.name} price targets`, {
       icon: '/pwa-192x192.png',
       body: asset.priceTarget
         ? `Low: ${asset.currency}${asset.priceTarget.low}, High: ${asset.currency}${asset.priceTarget.high},\nAverage: ${asset.currency}${asset.priceTarget.average}, Median: ${asset.currency}${asset.priceTarget.median}`
