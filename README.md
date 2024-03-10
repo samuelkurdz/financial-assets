@@ -57,6 +57,9 @@ However, for more complex styling needs and to ensure consistency across the app
 - The application is developed with a focus on front-end functionality and does not include backend components such as authentication or data persistence.
 - The application is developed to be fully responsive and to work seamlessly on both desktop and mobile devices, with a consistent experience.
 - The application is developed with the aim of being easily installed as a Mobile App.
+- The assets data is displayed in a paginated, sortable and filterable table.
+- On web screens larger than mobile, some columns can be toggled on and off to view additional asset's data.
+- Additional feature: a tiny Notification system, to view asset's price targets.
 
 ### API Endpoint
 
@@ -79,8 +82,8 @@ Here's how you can install the application from the browser and create an APK us
 ### *Installation from Browser:*
 1. Open Browser: Navigate to the Financial Asset Viewer application using any web browser on your Android device.
 
-2. Add to Home Screen: Tap on the browser's menu options (typically represented by three dots) and select `Add to Home Screen`, `Install App` or `Install Financial Asset Viewer.`.
-This action will create a shortcut icon on your device's home screen for quick access to the application.
+2. Add to Home Screen: If install App popup is not displayed, tap on the browser's menu options (typically represented by three dots) and select `Add to Home Screen`, `Install App` or `Install Financial Asset Viewer.`.
+This action will create an app icon on your device's home screen or apps menu for quick access to the application.
 
 3. Launch Application: Once added to the home screen, tap on the Financial Asset Viewer icon to launch the application.
 The application will open in full-screen mode, providing a native app-like experience.
